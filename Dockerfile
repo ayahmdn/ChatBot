@@ -8,4 +8,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 EXPOSE 8002
-CMD ["gunicorn", "chatboot.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "chatboot.wsgi:application", "--bind", "0.0.0.0:$PORT", "--workers", "3"]
+
